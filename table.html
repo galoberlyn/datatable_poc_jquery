@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+  <link
+      rel="stylesheet"
+      href="main.css"
+    />
+    <link
+    rel="stylesheet"
+    href="dt.css"
+  />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+
+  <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+  <link href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/fc-4.2.2/fh-3.3.2/rr-1.3.3/sp-2.1.2/sl-1.6.2/datatables.min.css" rel="stylesheet"/>
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+  <script src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/fc-4.2.2/fh-3.3.2/rr-1.3.3/sp-2.1.2/sl-1.6.2/datatables.min.js"></script>
+
+</head>
+
+
+<body>
+  
+<div class="p-5">
+  <div id="result">
+    Event Result:
+  </div>
+  <table id="myTable" class="table">
+    <thead style="padding: 10px">
+      <tr>
+          <th class="order" style="width: 2%">Order</th>
+          <th class="name" style="width: 10%">Provider Name</th>
+          <th class="caption" style="width: 20%">Caption</th>
+          <th class="c1" style="width: 5%">Contact 1</th>
+          <th class="c2" style="width: 5%">Contact 2</th>
+          <th class="st" style="width: 10%">Street</th>
+          <th class="province" style="width: 10%">Province</th>
+          <th class="city" style="width: 5%">City</th>
+          <th class="web" style="width: 5%">Website</th>
+          <th class="act" style="width: 8%">Actions</th>
+          <th class="live" style="width: 5%">Live</th>
+      </tr>
+      
+    </thead>
+  </table>
+</div>
+
+
+</body>
+</html>
+
+<script>
+
+const sampleData = [
+    {
+      "order": 1,
+      "name":       "Tiger Nixon",
+      "caption":   "My name is Tiger Nixon and I am a test My name is Tiger Nixon and I am a test My name is Tiger Nixon and I am a test",
+      "contact1":     "5555",
+      "contact2": "3333",
+      "street":     "Nixon Street",
+      "province":       "Probinsya",
+      "city":       "City",
+      "website":       "web.com",
+      "actions":       "5421",
+      "live":       "5421"
+    },
+    {
+      "order": 2,
+      "name":       "Test Provider",
+      "caption":   "Not repeating Provider",
+      "contact1":     "1234",
+      "contact2": "4321",
+      "street":     "Provider example Street",
+      "province":       "Probinsyano",
+      "city":       "Citi",
+      "website":       "example.com",
+      "actions":       "5421",
+      "live":       "5421"
+    },
+    {
+      "order": 3,
+      "name":       "Maria Clara",
+      "caption":   "Ang asawa ni Crisostomo",
+      "contact1":    "9999",
+      "contact2": "0000",
+      "street":     "Elfili",
+      "province":       "Filipino",
+      "city":       "Pilipinas",
+      "website":       "pilipinas.com",
+      "actions":       "5421",
+      "live":       "5421"
+    },
+    {
+      "order": 4,
+      "name": "John Smith",
+      "caption": "CEO of XYZ Corporation",
+      "contact1": "123-456-7890",
+      "contact2": "N/A",
+      "street": "123 Main Street",
+      "province": "California",
+      "city": "Los Angeles",
+      "website": "xyzcorp.com",
+      "actions": "10000",
+      "live": "5000"
+  },
+  {
+    "order": 5,
+    "name": "Sarah Johnson",
+    "caption": "Bestselling Author",
+    "contact1": "555-555-5555",
+    "contact2": "N/A",
+    "street": "456 Oak Avenue",
+    "province": "New York",
+    "city": "New York City",
+    "website": "sarahjohnsonbooks.com",
+    "actions": "7500",
+    "live": "2500"
+  },
+  {
+    "order": 6,
+    "name": "Michael Lee",
+    "caption": "Professional Basketball Player",
+    "contact1": "888-888-8888",
+    "contact2": "N/A",
+    "street": "789 Maple Street",
+    "province": "California",
+    "city": "San Francisco",
+    "website": "michaelleebasketball.com",
+    "actions": "9000",
+    "live": "6000"
+  },
+  {
+    "order": 7,
+    "name": "Jasmine Patel2",
+    "caption": "Founder of JP Designs",
+    "contact1": "333-333-3333",
+    "contact2": "444-444-4444",
+    "street": "321 Main Street",
+    "province": "Illinois",
+    "city": "Chicago",
+    "website": "jpdesigns.com",
+    "actions": "5000",
+    "live": "2500"
+  },
+  {
+    "order": 8,
+    "name": "Erik Rodriguez3",
+    "caption": "Software Engineer at ABC Inc",
+    "contact1": "777-777-7777",
+    "contact2": "N/A",
+    "street": "987 Elm Street",
+    "province": "Texas",
+    "city": "Austin",
+    "website": "erikrodriguez.com",
+    "actions": "6000",
+    "live": "3000"
+  },
+  {
+    "order": 9,
+    "name": "Jasmine Patel2",
+    "caption": "Founder of JP Designs",
+    "contact1": "333-333-3333",
+    "contact2": "444-444-4444",
+    "street": "321 Main Street",
+    "province": "Illinois",
+    "city": "Chicago",
+    "website": "jpdesigns.com",
+    "actions": "5000",
+    "live": "2500"
+  },
+  {
+    "order": 10,
+    "name": "Jasmine Patel2",
+    "caption": "Founder of JP Designs",
+    "contact1": "333-333-3333",
+    "contact2": "444-444-4444",
+    "street": "321 Main Street",
+    "province": "Illinois",
+    "city": "Chicago",
+    "website": "jpdesigns.com",
+    "actions": "5000",
+    "live": "2500"
+  },
+  {
+    "order": 11,
+    "name": "Jasmine Patel2",
+    "caption": "Founder of JP Designs",
+    "contact1": "333-333-3333",
+    "contact2": "444-444-4444",
+    "street": "321 Main Street",
+    "province": "Illinois",
+    "city": "Chicago",
+    "website": "jpdesigns.com",
+    "actions": "5000",
+    "live": "2500"
+  },
+  {
+    "order": 12,
+    "name": "Erik Rodriguez3",
+    "caption": "Software Engineer at ABC Inc",
+    "contact1": "777-777-7777",
+    "contact2": "N/A",
+    "street": "987 Elm Street",
+    "province": "Texas",
+    "city": "Austin",
+    "website": "erikrodriguez.com",
+    "actions": "6000",
+    "live": "3000"
+  }
+];
+
+
+const columns = [
+  { data: "order" },
+  { data: "name" },
+  { data: "caption" },
+  { data: "contact1" },
+  { data: "contact2" },
+  { data: "street" },
+  { data: "province" },
+  { data: "city" },
+  { data: "website" }
+]
+
+
+$(document).ready( function () {
+
+  // Setup - add a text input to each footer cell
+    $('#myTable thead tr')
+        .clone(true)
+        .addClass('filters')
+        .appendTo('#myTable thead');
+  
+    var table = $('#myTable').DataTable({
+      columns,
+      data: sampleData,
+      orderCellsTop: true,
+      fixedHeader: true,
+      rowReorder: {
+        dataSrc: 'order'
+      },
+      initComplete: function () {
+        var api = this.api();
+        
+        // For each column
+        api
+            .columns()
+            .eq(0)
+            .each(function (colIdx) {
+                // Set the header cell to contain the input element
+                var cell = $('.filters th').eq(
+                    $(api.column(colIdx).header()).index()
+                );
+                var title = $(cell).text();
+
+                if ($(api.column(colIdx).header()).index() >= 0) {
+                  $(cell).html('<input type="text" />');
+                }
+
+                
+
+                // On every keypress in this input
+                $(
+                    'input',
+                    $('.filters th').eq($(api.column(colIdx).header()).index())
+                )
+                    .off('keyup change')
+                    .on('change', function (e) {
+                        // Get the search value
+                        $(this).attr('title', $(this).val());
+                        var regexr = '({search})'; //$(this).parents('th').find('select').val();
+
+                        // Search the column for that value
+                        api
+                            .column(colIdx)
+                            .search(
+                                this.value != ''
+                                    ? regexr.replace('{search}', '(((' + this.value + ')))')
+                                    : '',
+                                this.value != '',
+                                this.value == ''
+                            )
+                            .draw();
+                    })
+                    .on('keyup', function (e) {
+                        e.stopPropagation();
+
+                        $(this).trigger('change');
+                        $(this)
+                            .focus()[0]
+                    });
+            });
+      },
+      columnDefs: [
+        {
+          orderable: false, 
+          searchable: false, 
+          sortable: false,
+          className: 'reorder', 
+          targets: 0
+        },
+        {
+          targets: 9, //column number in array
+          searchable: false,
+          defaultContent: `
+          <div class="d-flex">
+              <button
+                type="button"
+                class="btn"
+                data-toggle="modal"
+                data-target="#articleModal"
+                data-value="<%= article.id %>"
+              >
+                <i class="fas fa-edit" aria-hidden="true"></i>
+              </button>
+              <button type="button" class="btn deleteArticle" data-value="<%= article.id %>">
+                <i class="fas fa-trash" aria-hidden="true"></i>
+              </button>
+          </div>
+          `,
+        },
+        {
+          targets: 10, //column number in array
+          searchable: false,
+          defaultContent: `
+              <label class="switch">
+                <input data-value="<%= item.id %>" class='liveCheckbox' type="checkbox" checked/>
+                <span class="slider round"></span>
+              </label>
+          `,
+        }
+      ]
+    });
+
+    table.on( 'row-reorder', function ( e, diff, edit ) {
+        var result = 'Reorder started on row: '+edit.triggerRow.data().name+'<br>';
+ 
+        for ( var i=0, ien=diff.length ; i<ien ; i++ ) {
+            var rowData = table.row( diff[i].node ).data();
+ 
+            result += rowData[1]+' updated to be in position '+
+                diff[i].newData+' (was '+diff[i].oldData+')<br>';
+        }
+ 
+        $('#result').html( 'Event result:<br>'+result );
+    } );
+} );
+</script>

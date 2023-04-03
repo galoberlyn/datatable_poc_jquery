@@ -1,0 +1,36 @@
+td, th {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.filters th {
+  background: white;
+}
+
+.filters th input {
+  border-radius: 8px;
+  border: 1px solid #D0D5DD;
+}
+
+#result {
+  border: 1px solid #888;
+  background: #f7f7f7;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.order input {
+  display: none;
+}
+
+.even td {
+  background: #F2F2F2;
+}
+
+#myTable td {
+  font-size: 14px;
+}
+
+#myTable th {
+  text-align: center;
+}
+
