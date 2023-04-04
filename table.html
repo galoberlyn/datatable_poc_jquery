@@ -7,7 +7,7 @@
   <title>Document</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap" rel="stylesheet">
 
   <link
       rel="stylesheet"
@@ -67,8 +67,8 @@
           <th class="province" style="width: 10%">Province</th>
           <th class="city" style="width: 5%">City</th>
           <th class="web" style="width: 5%">Website</th>
-          <th class="act" style="width: 8%">Actions</th>
-          <th class="live" style="width: 5%">Live</th>
+          <th class="act" style="width: 2%">Actions</th>
+          <th class="live" style="width: 2%">Live</th>
       </tr>
       
     </thead>
@@ -337,14 +337,14 @@ $(document).ready( function () {
           <div class="d-flex">
               <button
                 type="button"
-                class="btn"
+                class="btn btn-sm"
                 data-toggle="modal"
                 data-target="#articleModal"
                 data-value="<%= article.id %>"
               >
                 <i class="fas fa-edit" aria-hidden="true"></i>
               </button>
-              <button type="button" class="btn deleteArticle" data-value="<%= article.id %>">
+              <button type="button" class="btn btn-sm deleteArticle" data-value="<%= article.id %>">
                 <i class="fas fa-trash" aria-hidden="true"></i>
               </button>
           </div>
