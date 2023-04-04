@@ -43,3 +43,31 @@ td, th {
 .dtfh-floatingparenthead table thead tr th {
   text-align: center;
 }
+
+.dataTables_filter input {
+  border-radius: 8px;
+}
+
+.dataTables_filter label, .dataTables_length label, .dataTables_info {
+  color: #3579F6;
+  font-size: 14px;
+}
+
+.previous a, .next a, .page-item a {
+  border: none;
+  font-size: 14px;
+}
+
+.page-item.active .page-link {
+  border-radius: 8px;
+  background: #3579F6;
+}
+
+.page-link:hover {
+  border-radius: 8px;
+}
+
+.page-item.active .page-link {
+  border-radius: 8px;
+  background: #3579F6;
+}
