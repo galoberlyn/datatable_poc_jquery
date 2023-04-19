@@ -63,7 +63,7 @@
           <th class="caption" style="width: 20%">Caption</th>
           <th class="c1" style="width: 5%">Contact 1</th>
           <th class="c2" style="width: 5%">Contact 2</th>
-          <th class="st" style="width: 10%">Street</th>
+          <th class="st" style="width: 10%">Address</th>
           <th class="province" style="width: 10%">Province</th>
           <th class="city" style="width: 5%">City</th>
           <th class="web" style="width: 5%">Website</th>
@@ -364,12 +364,12 @@ $(document).ready( function () {
     });
 
     table.on( 'row-reorder', function ( e, diff, edit ) {
-        var result = 'Reorder started on row: '+edit.triggerRow.data().name+'<br>';
+        var result = 'Reorder started on row: '+edit.triggerRow.data().order+'<br>';
  
         for ( var i=0, ien=diff.length ; i<ien ; i++ ) {
             var rowData = table.row( diff[i].node ).data();
  
-            result += rowData[1]+' updated to be in position '+
+            result += rowData.name+' updated to be in position '+
                 diff[i].newData+' (was '+diff[i].oldData+')<br>';
         }
  
